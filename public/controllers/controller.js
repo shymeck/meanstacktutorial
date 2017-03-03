@@ -30,6 +30,8 @@ $scope.remove = function(id) {
 
 $scope.edit = function(id) {
   console.log(id);
+  console.log('step1');
+  document.getElementById("add-contact").disabled = true;
   $http.get('/contactlist/' + id).success(function(response) {
     $scope.contact = response;
   });
@@ -44,6 +46,7 @@ $scope.update = function() {
 
 $scope.deselect = function() {
   $scope.contact = "";
+  document.getElementById("add-contact").disabled = false;
 }
 
-}]);﻿
+}]);
